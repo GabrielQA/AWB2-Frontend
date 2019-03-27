@@ -22,5 +22,12 @@ export class JarwisService {
   changePassword(data) {
     return this.http.post(`${this.baseUrl}/resetPassword`, data)
   }
+  
+  email(data) {
+    return this.http.post(`${this.baseUrl}/email`, data)
+  }
+  email_verification(data) {
+    return this.http.post(`${this.baseUrl}/email_verification`, data)
+  }
 
 }

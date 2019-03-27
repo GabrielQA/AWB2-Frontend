@@ -5,27 +5,44 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RequestResetComponent } from './components/pasword/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/pasword/response-reset/response-reset.component';
+import { EmailComponent } from './components/email/email.component';
+import { BeforeLoginService } from './services/before-login.service';
+import { AfterLoginService } from './services/after-login.service';
 
 const appRoutes: Routes = [
 {
   path:"login",
-  component:LoginComponent
+  component:LoginComponent,
+  canActivate: [BeforeLoginService]
+  
 },
 {
   path: 'signup',
-  component: SignupComponent
+  component: SignupComponent,
+  canActivate: [BeforeLoginService]
 },
 {
   path: 'profile',
-  component: ProfileComponent
+  component: ProfileComponent,
+  canActivate: [AfterLoginService]
 },
 {
   path: 'request-password-reset',
-  component: RequestResetComponent
+  component: RequestResetComponent,
+  canActivate: [BeforeLoginService]
 },
 {
   path: 'response-password-reset',
-  component: ResponseResetComponent
+  component: ResponseResetComponent,
+  canActivate: [BeforeLoginService]
+},
+{
+  path: 'email',
+  component: EmailComponent
+},
+{
+  path: 'email_verification',
+  component: EmailComponent
 },
 ];
 

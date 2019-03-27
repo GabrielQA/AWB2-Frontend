@@ -16,6 +16,7 @@ import { TokenService } from './services/token.service';
 import { AuthService } from './services/auth.service';
 import { AfterLoginService } from './services/after-login.service';
 import { BeforeLoginService } from './services/before-login.service';
+import { EmailComponent } from './components/email/email.component';
 
 
 
@@ -27,7 +28,8 @@ import { BeforeLoginService } from './services/before-login.service';
     SignupComponent,
     ProfileComponent,
     RequestResetComponent,
-    ResponseResetComponent
+    ResponseResetComponent,
+    EmailComponent
   ],
   imports: [
     BrowserModule,

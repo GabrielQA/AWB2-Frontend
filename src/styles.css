@@ -8,5 +8,5 @@ border-left:5px solid red;
     border-left:5px solid rgb(24, 132, 165);
     }
 body{
-    background: rgb(54, 115, 156);  /* fallback for old browsers */
+    background-image: url("https://images2.alphacoders.com/480/480530.png");
 }
