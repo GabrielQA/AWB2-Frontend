@@ -1,275 +1,133 @@
 <div class="mt-4 col-8 offset-2">
-    <div class="card">
-      <div class="card-header">Register Here</div>
-      <div class="card-body">
-        <form #signupForm=ngForm (ngSubmit)="onSubmit()">
-          <div class="form-group row">
-            <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" name="name" class="form-control" id="inputname3" placeholder="Name" [(ngModel)]="form.name" required>
-              <div class="alert alert-danger" [hidden]="!error.name">
-                {{error.name}}
-              </div>
+  <div class="card">
+    <div class="card-header">Register Here</div>
+    <div class="card-body">
+      <form #signupForm=ngForm (ngSubmit)="onSubmit()">
+        <!--Name-->
+        <div class="form-group row">
+          <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" class="form-control" id="inputName3" placeholder="Name" [(ngModel)]="form.name" required>
+            <div class="alert alert-danger" [hidden]="!error.name">
+              {{error.name}}
             </div>
           </div>
-  
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" required>
-              <div class="alert alert-danger" [hidden]="!error.email">
-                {{error.email}}
-              </div>
+        </div>
+        <!--Last Name-->
+        <div class="form-group row">
+          <label for="inputlastname3" class="col-sm-2 col-form-label">Last_Name</label>
+          <div class="col-sm-10">
+            <input type="text" name="lastname" class="form-control" id="inputlastname3" placeholder="Lastname" [(ngModel)]="form.lastname" required>
+            <div class="alert alert-danger" [hidden]="!error.lastname">
+              {{error.lastname}}
             </div>
           </div>
-  
-          <div class="form-group row">
-            <label for="inputPasswordConfirmation3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPasswordConfirmation3" placeholder="Confirm Password"
-                [(ngModel)]="form.password" required>
-              <div class="alert alert-danger" [hidden]="!error.password">
-                {{error.password}}
-              </div>
+        </div>
+
+        <!--Country-->
+        <div class="form-group row">
+          <label for="inputcountry3" class="col-sm-2 col-form-label">Country</label>
+          <div class="col-sm-10">
+            <input type="text" name="country" class="form-control" id="inputcountry3" placeholder="Country" [(ngModel)]="form.country" required>
+            <div class="alert alert-danger" [hidden]="!error.country">
+              {{error.country}}
             </div>
           </div>
-  
-          <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>
-            <div class="col-sm-10">
-              <input type="password" name="password_confirmation" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password_confirmation"
-                required>
+        </div>
+        <!--birthdate-->
+        <div class="form-group row">
+          <label for="inputbirthdate3" class="col-sm-2 col-form-label">Birthdate</label>
+          <div class="col-sm-10">
+            <input type="date" name="birthdate" class="form-control" id="inputbirthdate3" placeholder="Birthdate" [(ngModel)]="form.birthdate" required>
+            <div class="alert alert-danger" [hidden]="!error.birthdate">
+              {{error.birthdate}}
             </div>
           </div>
-  
-          <div class="form-group row">
-            <div class="col-sm-10 offset-2">
-  
-              <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Sign Up</button>
-  
-              <a routerLink="/login" class="btn btn-info float-right">Sign in</a>
-  
+        </div>
+        <!--telephone-->
+        <div class="form-group row">
+          <label for="inputtelephone3" class="col-sm-2 col-form-label">Telephone</label>
+          <div class="col-sm-10">
+            <input type="number" name="telephone" class="form-control" id="inputtelephone3" placeholder="Telephone" [(ngModel)]="form.telephone" required>
+            <div class="alert alert-danger" [hidden]="!error.telephone">
+              {{error.telephone}}
             </div>
           </div>
-  
-        </form>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="mt-4 col-8 offset-2">
-    <div class="card">
-      <div class="card-header">Login Here</div>
-      <div class="card-body">
-        <form #signupForm=ngForm (ngSubmit)="onSubmit()">
-
-          <div class="alert alert-danger" [hidden]="!error">
-            {{error}}
-          </div>
-
-
-          <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-          <div class="col-sm-10">
-          <input type="text" name="name" class="form-control" id="inputName3" placeholder="name" [(ngModel)]="form.name" required>
-          </div>
-          </div>
-
-
-          <div class="form-group row">
-          <label for="inputName3" class="col-sm-2 col-form-label">Last_name</label>
-          <div class="col-sm-10">
-          <input type="text" name="last_name" class="form-control" id="inputlast_name3" placeholder="Last_name" [(ngModel)]="form.last_name" required>                  
-          </div>
-          </div>
-
-          <div class="form-group row">
-          <label for="inputName3" class="col-sm-2 col-form-label">Country</label>
-          <div class="col-sm-10">
-          <input type="text" name="country" class="form-control" id="inputcountry3" placeholder="Country" [(ngModel)]="form.country" required>
-          </div>
-          </div>
-
-          <div class="form-group row">
-          <label for="inputName3" class="col-sm-2 col-form-label">Birthdate</label>
-          <div class="col-sm-10">
-          <input type="date" name="date" class="form-control" id="inputdate3" placeholder="Date" [(ngModel)]="form.date" required>
-          </div>
-          </div>
-
-          <div class="form-group row">
-          <label for="inputName3" class="col-sm-2 col-form-label">Phone</label>
-          <div class="col-sm-10">
-          <input type="phone" name="phone" class="form-control" id="inputphone3" placeholder="Phone" [(ngModel)]="form.phone" required>
-          </div>
-          </div>
-
-
-          <div class="form-group row">
+        </div>
+        <!--Email-->
+        <div class="form-group row">
           <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
-          <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" required>
+            <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" required>
+            <div class="alert alert-danger" [hidden]="!error.email">
+              {{error.email}}
+            </div>
           </div>
-          </div>
-
-          <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        </div>
+          <!--Password-->
+        <div class="form-group row">
+          <label for="inputPasswordConfirmation3" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-10">
-          <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password"
-          required>
+            <input type="password" name="password" class="form-control" id="inputPasswordConfirmation3" placeholder="Confirm Password"
+              [(ngModel)]="form.password" required>
+            <div class="alert alert-danger" [hidden]="!error.password">
+              {{error.password}}
+            </div>
           </div>
-          </div>
-
-          <div class="form-group row">
-          <label for="inputPasswordConfirmation3" class="col-sm-2 col-form-label">Confirm Password</label>
+        </div>
+        <!--Confirmation_Password-->
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>
           <div class="col-sm-10">
-          <input type="password" name="password_confirmation" class="form-control" id="inputPasswordConfirmation3" placeholder="ConfirmPassword" [(ngModel)]="form.password_confirmation"
-          required>
+            <input type="password" name="password_confirmation" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password_confirmation"
+              required>
           </div>
-          </div>
+        </div>
 
-          <div class="form-group row">
+        <div class="form-group row">
           <div class="col-sm-10 offset-2">
 
-          <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Sign Up</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Sign Up</button>
 
-          <a routerLink="/login" class="btn btn-info float-right">Sign in</a>
+            <a routerLink="/login" class="btn btn-info float-right">Sign in</a>
 
           </div>
-          </div>
-
-          
-        </form>
-      </div>
-    </div>
-  </div>-->
-
-
-
-
-
-
-
-
-
-  <!--<div class="form-group row">
-      <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
-      <div class="col-sm-10">
-        <input type="text" name="name" class="form-control" id="inputname3" placeholder="Name" [(ngModel)]="form.name" required>
-        <div class="alert alert-danger" [hidden]="!error.name">
-          {{error.name}}
         </div>
-      </div>
+
+      </form>
     </div>
+  </div>
+</div>
 
-    <div class="form-group row">
-      <label for="inputName3" class="col-sm-2 col-form-label">Last_name</label>
-      <div class="col-sm-10">
-        <input type="text" name="last_name" class="form-control" id="inputname3" placeholder="Last_name" [(ngModel)]="form.last_name" required>
-        <div class="alert alert-danger" [hidden]="!error.last_name">
-          
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="inputName3" class="col-sm-2 col-form-label">Country</label>
-      <div class="col-sm-10">
-        <input type="text" name="country" class="form-control" id="inputname3" placeholder="Country" [(ngModel)]="form.country" required>
-        <div class="alert alert-danger" [hidden]="!error.country">
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="inputName3" class="col-sm-2 col-form-label">Birthdate</label>
-      <div class="col-sm-10">
-        <input type="date" name="date" class="form-control" id="inputname3" placeholder="Date" [(ngModel)]="form.date" required>
-        <div class="alert alert-danger" [hidden]="!error.date">
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="inputName3" class="col-sm-2 col-form-label">Phone</label>
-      <div class="col-sm-10">
-        <input type="phone" name="phone" class="form-control" id="inputname3" placeholder="Phone" [(ngModel)]="form.phone" required>
-        <div class="alert alert-danger" [hidden]="!error.phone">
 
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email" [(ngModel)]="form.email" required>
-        <div class="alert alert-danger" [hidden]="!error.email">
-          {{error.email}}
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="inputPasswordConfirmation3" class="col-sm-2 col-form-label">Password</label>
-      <div class="col-sm-10">
-        <input type="password" name="password" class="form-control" id="inputPasswordConfirmation3" placeholder="Confirm Password"
-          [(ngModel)]="form.password" required>
-        <div class="alert alert-danger" [hidden]="!error.password">
-          {{error.password}}
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>
-      <div class="col-sm-10">
-        <input type="password" name="password_confirmation" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="form.password_confirmation"
-          required>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <div class="col-sm-10 offset-2">
 
-        <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Sign Up</button>
 
-        <a routerLink="/login" class="btn btn-info float-right">Sign in</a>
 
-      </div>
-    </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
