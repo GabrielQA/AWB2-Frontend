@@ -17,6 +17,8 @@ import { AuthService } from './services/auth.service';
 import { AfterLoginService } from './services/after-login.service';
 import { BeforeLoginService } from './services/before-login.service';
 import { EmailComponent } from './components/email/email.component';
+import { VideosComponent } from './components/videos/videos.component';
+import { UserskidsComponent } from './components/userskids/userskids.component';
 
 
 
@@ -29,7 +31,9 @@ import { EmailComponent } from './components/email/email.component';
     ProfileComponent,
     RequestResetComponent,
     ResponseResetComponent,
-    EmailComponent
+    EmailComponent,
+    VideosComponent,
+    UserskidsComponent
   ],
   imports: [
     BrowserModule,

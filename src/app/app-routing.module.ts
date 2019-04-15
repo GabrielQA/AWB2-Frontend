@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule,Routes  } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { VideosComponent } from './components/videos/videos.component';
+import { UserskidsComponent } from './components/userskids/userskids.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RequestResetComponent } from './components/pasword/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/pasword/response-reset/response-reset.component';
@@ -43,6 +45,14 @@ const appRoutes: Routes = [
 {
   path: 'email_verification',
   component: EmailComponent
+},
+{
+  path: 'videos',
+  component:  VideosComponent
+},
+{
+  path: 'userskids',
+  component: UserskidsComponent
 },
 ];
 
