@@ -19,6 +19,7 @@ import { BeforeLoginService } from './services/before-login.service';
 import { EmailComponent } from './components/email/email.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { UserskidsComponent } from './components/userskids/userskids.component';
+import { VerifyComponent } from './components/verify/verify.component';
 
 
 
@@ -33,7 +34,8 @@ import { UserskidsComponent } from './components/userskids/userskids.component';
     ResponseResetComponent,
     EmailComponent,
     VideosComponent,
-    UserskidsComponent
+    UserskidsComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule,

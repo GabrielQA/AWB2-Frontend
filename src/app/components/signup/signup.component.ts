@@ -20,7 +20,9 @@ export class SignupComponent implements OnInit {
     birthdate:null,
     telephone:null,
     password:null,
-    password_confirmation:null
+    password_confirmation:null,
+    verification:false,
+
   }
   public error = [];
   constructor(
@@ -34,10 +36,12 @@ export class SignupComponent implements OnInit {
     ) { }
 
   onSubmit() {
+    console.log(this.form);
    this.Jarwis.signup(this.form).subscribe(
       data => this.handleResponse,
       error => this.handleError(error)
     );
+
   }
 
   handleResponse(data) {

@@ -3,6 +3,7 @@ import { RouterModule,Routes  } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { VideosComponent } from './components/videos/videos.component';
+import { VerifyComponent } from './components/verify/verify.component';
 import { UserskidsComponent } from './components/userskids/userskids.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RequestResetComponent } from './components/pasword/request-reset/request-reset.component';
@@ -53,6 +54,10 @@ const appRoutes: Routes = [
 {
   path: 'userskids',
   component: UserskidsComponent
+},
+{
+path: 'verify',
+component: VerifyComponent
 },
 ];
 

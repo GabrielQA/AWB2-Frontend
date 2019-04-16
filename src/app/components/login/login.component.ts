@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       error => this.handleError(error)
     );
   }
-
+  //Entrada a la vista perfil
   handleResponse(data) {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
