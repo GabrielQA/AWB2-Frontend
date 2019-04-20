@@ -26,8 +26,10 @@ export class JarwisService {
   email(data) {
     return this.http.post(`${this.baseUrl}/email`, data)
   }
-  email_verification(data) {
-    return this.http.post(`${this.baseUrl}/email_verification`, data)
+  verify(data) {
+    return this.http.post(`${this.baseUrl}/verify`, data)
   }
-
+  validation(data) {
+    return this.http.post(`${this.baseUrl}/validation`, data)
+  }
 }

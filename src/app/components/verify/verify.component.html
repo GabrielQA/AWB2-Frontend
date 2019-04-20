@@ -31,43 +31,6 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Twilio Verify Phone Verification</h3>
                 </div>
-                <div class="panel-body" ng-show="view.start">
-                    <form role="form">
-                        <div class="row">
-                            <div class="col-xs-3 col-sm-3 col-md-3">
-                                <div class="form-group">
-                                    <input type="text" name="country_code" id="country_code"
-                                           class="form-control"
-                                           ng-model="setup.country_code"
-                                           class="form-control input-sm"
-                                           placeholder="Country Code">
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="phone_number" id="phone_number"
-                                           class="form-control"
-                                           ng-model="setup.phone_number"
-                                           class="form-control input-sm"
-                                           placeholder="Phone #">
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-3 col-md-3">
-                                <div class="form-group">
-                                    <select name="via" id="via" ng-model="setup.via"  class="form-control">
-                                        <option value="sms" selected="selected">SMS</option>
-                                        <option value="call">CALL</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <input type="submit" value="Request Verification"
-                               ng-click="startVerification()"
-                               class="btn btn-info btn-block">
-                    </form>
-                </div>
                 <div class="panel-body" ng-hide="view.start">
                     <form role="form">
                         <div class="row">

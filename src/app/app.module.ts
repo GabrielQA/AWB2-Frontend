@@ -20,6 +20,7 @@ import { EmailComponent } from './components/email/email.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { UserskidsComponent } from './components/userskids/userskids.component';
 import { VerifyComponent } from './components/verify/verify.component';
+import { ValidationComponent } from './components/validation/validation.component';
 
 
 
@@ -35,7 +36,8 @@ import { VerifyComponent } from './components/verify/verify.component';
     EmailComponent,
     VideosComponent,
     UserskidsComponent,
-    VerifyComponent
+    VerifyComponent,
+    ValidationComponent
   ],
   imports: [
     BrowserModule,

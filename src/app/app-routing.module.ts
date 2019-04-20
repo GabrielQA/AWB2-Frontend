@@ -11,6 +11,8 @@ import { ResponseResetComponent } from './components/pasword/response-reset/resp
 import { EmailComponent } from './components/email/email.component';
 import { BeforeLoginService } from './services/before-login.service';
 import { AfterLoginService } from './services/after-login.service';
+import { ValidationComponent } from './components/validation/validation.component';
+
 
 const appRoutes: Routes = [
 {
@@ -56,8 +58,14 @@ const appRoutes: Routes = [
   component: UserskidsComponent
 },
 {
-path: 'verify',
-component: VerifyComponent
+  path: 'verify',
+  component: VerifyComponent,
+  canActivate: [AfterLoginService]
+},
+{
+  path: 'validation',
+  component: ValidationComponent,
+  
 },
 ];
 

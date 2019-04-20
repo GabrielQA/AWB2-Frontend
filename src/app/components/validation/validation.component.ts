@@ -6,18 +6,17 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-validation',
+  templateUrl: './validation.component.html',
+  styleUrls: ['./validation.component.css']
 })
-export class LoginComponent implements OnInit {
+export class ValidationComponent implements OnInit {
 
   public form = {
-    email: null,
-    password: null
+    code: null,
   };
 
-  public error = null;
+  public error: any;
 
   constructor(
     private Jarwis: JarwisService,
@@ -27,22 +26,32 @@ export class LoginComponent implements OnInit {
     ) { }
 
   onSubmit() {
-   this.Jarwis.login(this.form).subscribe(
-      data => this.handleResponse(data),
-      error => this.handleError(error)
-    );
+    this.validateCode();
   }
   //Entrada a la vista perfil
   handleResponse(data) {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
-    this.router.navigateByUrl('/validation');
+    this.router.navigateByUrl('/profile');
   }
 
   handleError(error) {
     this.error = error.error.error;
   }
   ngOnInit() {
+  }
+
+  validateCode() {
+    const code = this.form.code.length;
+    console.log(code);
+    if (code != 4 ) {
+      this.error = 'The code no found';
+    }else if(code === 0){
+      this.error = 'Insert code';
+    }else if(code === 4){
+      this.router.navigate(['profile']);
+    }
+    
   }
 
 }
