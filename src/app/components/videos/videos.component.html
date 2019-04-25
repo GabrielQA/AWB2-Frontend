@@ -1,27 +1,74 @@
-<!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-</head>
-<body>
-
-  <main>
-      <div class="row">
-          <div class="left col-lg-4">
-            <div class="photo-left">
-              <div class="active"></div>
+<div  class="mt-4 col-8 offset-2">
+  <div  id="Div3" class="card">
+    <div id="Div1" class="card-header">Register Videos</div>
+    <div id="Div2" class="card-body">
+      <form id="form" #videosForm=ngForm (ngSubmit)="onSubmit()">
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button  class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>          
+            <div class="form-group row">
+            <div style="display: flex; justify-content: flex-end;" class="col-sm-10 offset-2">
+            <button routerLink="/create-videos" type="submit" class="btn btn-primary">Add Video</button>
             </div>
-          </div>
-          <div class="right col-lg-8">
-            <ul class="nav">
+            </div>
+            <table>
               
-              <a routerLink="/videos" class="btn btn-info float-right"><li>Incorporate Videos</li></a>
-              <a routerLink="/videos" class="btn btn-info float-right"><li>Change Videos</li></a>
-              <a routerLink="/videos" class="btn btn-info float-right"><li>Delete Videos</li></a>
-
-            </ul>
-      </div>
+            </table>
+            <div class="form-group row">
+              <div style="display: flex; justify-content: flex-end;" class="col-sm-10 offset-2">
+              <button routerLink="/profile" type="submit" class="btn btn-success float-right">Go back</button>
+              </div>
+              </div>
+      </form>
+    </div>
   </div>
-  </main>
-</body>
-</html>
+</div>
+<style>
+#Div2{
+  /*background: #0cebeb;  /* fallback for old browsers 
+  background: -webkit-linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb); 
+  background: linear-gradient(to right, #29ffc6, #20e3b2, #0cebeb);*/
+}
+#Div3{
+  height: 500px;
+  background: #ffffff;
+  padding: 10px 20px;
+}
+#Div1{
+  height: 50px;
+  background: rgba(245, 242, 242, 0.986);
+}</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

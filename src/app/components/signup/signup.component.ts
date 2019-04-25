@@ -24,7 +24,10 @@ export class SignupComponent implements OnInit {
     verification:false,
 
   }
+  public message: any;
   public error = [];
+  public verificate: any;
+
   constructor(
     
     private Jarwis:JarwisService,
@@ -36,12 +39,13 @@ export class SignupComponent implements OnInit {
     ) { }
 
   onSubmit() {
-    console.log(this.form);
+    
+    this.signupForm(); /** 
    this.Jarwis.signup(this.form).subscribe(
       data => this.handleResponse,
       error => this.handleError(error)
-    );
-
+   );*/
+    
   }
 
   handleResponse(data) {
@@ -52,7 +56,39 @@ export class SignupComponent implements OnInit {
   handleError(error){
     this.error = error.error.errors;
   }
+  handleMessage(message){
+    this.message = message.message.message;
+
+  }
+  handleVerificate(verificate){
+    this.verificate = verificate.verificate.verificate;
+
+  }
   ngOnInit() {
   }
-
+  age(){
+    const today: Date = new Date();
+    const birthDate: Date = new Date(this.form.birthdate);
+    let age: number = today.getFullYear() - birthDate.getFullYear();
+    const month: number = today.getFullYear() - birthDate.getMonth();
+    if(month < 0 || (month === 0 && today.getDate() < birthDate.getDate())){
+      age--;
+    }
+    console.log(age);
+    return age;
+  }
+  signupForm() {
+    if(this.age() < 18){
+      console.log( this.message ='Your are a kid, sorry.');
+    }else{
+      this.Jarwis.signup(this.form).subscribe(
+        data => this.handleResponse(data),
+        error => this.handleError(error)
+        
+     );
+     console.log( this.verificate ='Verificate your email');
+    }
+    
+    
+  }
 }

@@ -4,45 +4,48 @@ import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
-  selector: 'app-userskids',
-  templateUrl: './userskids.component.html',
-  styleUrls: ['./userskids.component.css']
+  selector: 'app-create-users',
+  templateUrl: './create-users.component.html',
+  styleUrls: ['./create-users.component.css']
 })
-export class UserskidsComponent implements OnInit {
+export class CreateUsersComponent implements OnInit {
+
   public form={
     name:null,
     username:null,
     birthdate:null,
-    id:null,
-   
+    password:null,
   }
-  public mostrar: any;
+  public error = [];
   constructor(
+    
     private Jarwis:JarwisService,
     private Token : TokenService,
     private Auth : AuthService,
     private router: Router,
-  ) { }
+
+
+    ) { }
+
   onSubmit() {
-   
-    
+   console.log(this.form);
+   this.Jarwis.create_users(this.form).subscribe(
+      data => this.handleResponse(data),
+      error => this.handleError(error)
+    );
   }
-  
+
   handleResponse(data) {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
     this.router.navigateByUrl('userskids');
   }
-  ngOnInit() {
-    this.handleMostrar(); 
+  handleError(error){
+    this.error = error.error.errors;
   }
-  handleMostrar(){
-    
-    this.mostrar = this.Jarwis.userskids().subscribe(
-      data => this.handleResponse(data),  
-      );
-   console.log(this.mostrar);
+  ngOnInit() {
   }
 
 }

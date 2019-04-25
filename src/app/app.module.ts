@@ -21,6 +21,10 @@ import { VideosComponent } from './components/videos/videos.component';
 import { UserskidsComponent } from './components/userskids/userskids.component';
 import { VerifyComponent } from './components/verify/verify.component';
 import { ValidationComponent } from './components/validation/validation.component';
+import { CreateUsersComponent } from './components/create-users/create-users.component';
+import { CreateVideosComponent } from './components/create-videos/create-videos.component';
+import { ModvideosComponent } from './components/modvideos/modvideos.component';
+import { ModusersComponent } from './components/modusers/modusers.component';
 
 
 
@@ -37,7 +41,11 @@ import { ValidationComponent } from './components/validation/validation.componen
     VideosComponent,
     UserskidsComponent,
     VerifyComponent,
-    ValidationComponent
+    ValidationComponent,
+    CreateUsersComponent,
+    CreateVideosComponent,
+    ModvideosComponent,
+    ModusersComponent
   ],
   imports: [
     BrowserModule,

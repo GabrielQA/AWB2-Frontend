@@ -4,45 +4,47 @@ import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
-  selector: 'app-userskids',
-  templateUrl: './userskids.component.html',
-  styleUrls: ['./userskids.component.css']
+  selector: 'app-create-videos',
+  templateUrl: './create-videos.component.html',
+  styleUrls: ['./create-videos.component.css']
 })
-export class UserskidsComponent implements OnInit {
+export class CreateVideosComponent implements OnInit {
+
   public form={
     name:null,
-    username:null,
-    birthdate:null,
-    id:null,
-   
+    link:null,
   }
-  public mostrar: any;
+  public error = [];
   constructor(
+    
     private Jarwis:JarwisService,
     private Token : TokenService,
     private Auth : AuthService,
     private router: Router,
-  ) { }
+
+
+    ) { }
+
   onSubmit() {
-   
-    
+    console.log(this.form);
+   this.Jarwis.create_videos(this.form).subscribe(
+      data => this.handleResponse,
+      error => this.handleError(error)
+    );
+
   }
-  
+
   handleResponse(data) {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
-    this.router.navigateByUrl('userskids');
+    this.router.navigateByUrl('videos');
+  }
+  handleError(error){
+    this.error = error.error.errors;
   }
   ngOnInit() {
-    this.handleMostrar(); 
-  }
-  handleMostrar(){
-    
-    this.mostrar = this.Jarwis.userskids().subscribe(
-      data => this.handleResponse(data),  
-      );
-   console.log(this.mostrar);
   }
 
 }

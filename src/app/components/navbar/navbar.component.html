@@ -1,9 +1,10 @@
-<nav class="navbar navbar-light bg-light justify-content-between">
+<nav id="Nav"class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand">GabrielQA</a>
   <div>
-    <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Login</a>
-    <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
-    <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">Profile</a>
+    <a id="a" class="btn btn-primary" routerLink="login" *ngIf="!loggedIn" style="margin: 0 10px 0 10px;">Login</a>
+    <a id="b" class="btn btn-primary" href="#" (click)="logout($event)" *ngIf="loggedIn" style="margin: 0 10px 0 10px;">kick-off</a>
+    <!--<a id="c" class="navbar-brand" routerLink="profile" *ngIf="loggedIn" style="margin: 0 10px 0 10px;">Inicio</a>
+-->
   </div>
 
 </nav>

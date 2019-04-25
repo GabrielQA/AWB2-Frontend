@@ -6,7 +6,11 @@ export class TokenService {
     login: 'http://localhost:8000/api/login',
     signup: 'http://localhost:8000/api/signup',
     verify: 'http://localhost:8000/api/verify',
-    validation: 'http://localhost:8000/api/validation'
+    validation: 'http://localhost:8000/api/validation',
+    create_users: 'http://localhost:8000/api/create_users',
+    create_videos: 'http://localhost:8000/api/create_videos',
+    userskids: 'http://localhost:8000/api/userskids',
+    videos: 'http://localhost:8000/api/viewvideos'
 
   };
 

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule,Routes  } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { CreateUsersComponent } from './components/create-users/create-users.component';
+import { CreateVideosComponent } from './components/create-videos/create-videos.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { VerifyComponent } from './components/verify/verify.component';
@@ -51,11 +53,15 @@ const appRoutes: Routes = [
 },
 {
   path: 'videos',
-  component:  VideosComponent
+  component:  VideosComponent,
+  canActivate: [AfterLoginService]
+
 },
 {
   path: 'userskids',
-  component: UserskidsComponent
+  component: UserskidsComponent,
+  canActivate: [AfterLoginService]
+
 },
 {
   path: 'verify',
@@ -66,6 +72,18 @@ const appRoutes: Routes = [
   path: 'validation',
   component: ValidationComponent,
   
+},
+{
+  path: 'create-users',
+  component: CreateUsersComponent,
+  canActivate: [AfterLoginService]
+
+  
+},
+{
+  path: 'create-videos',
+  component: CreateVideosComponent,
+  canActivate: [AfterLoginService]
 },
 ];
 

@@ -32,4 +32,16 @@ export class JarwisService {
   validation(data) {
     return this.http.post(`${this.baseUrl}/validation`, data)
   }
+  create_users(data) {
+    return this.http.post(`${this.baseUrl}/create_users`, data)
+  }
+  create_videos(data) {
+    return this.http.post(`${this.baseUrl}/create_videos`, data)
+  }
+  userskids() {
+    return this.http.get(`${this.baseUrl}/userskids`)
+  }
+  videos(data) {
+    return this.http.post(`${this.baseUrl}/viewvideos`, data)
+  }
 }

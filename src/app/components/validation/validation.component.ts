@@ -43,7 +43,6 @@ export class ValidationComponent implements OnInit {
 
   validateCode() {
     const code = this.form.code.length;
-    console.log(code);
     if (code != 4 ) {
       this.error = 'The code no found';
     }else if(code === 0){
