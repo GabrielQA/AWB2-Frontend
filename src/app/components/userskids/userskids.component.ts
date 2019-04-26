@@ -4,6 +4,7 @@ import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
   selector: 'app-userskids',
   templateUrl: './userskids.component.html',
@@ -17,7 +18,8 @@ export class UserskidsComponent implements OnInit {
     id:null,
    
   }
-  public mostrar: any;
+  public mostrar: any[] = [];
+  canti: any[] = [];
   constructor(
     private Jarwis:JarwisService,
     private Token : TokenService,
@@ -25,10 +27,8 @@ export class UserskidsComponent implements OnInit {
     private router: Router,
   ) { }
   onSubmit() {
-   
-    
+
   }
-  
   handleResponse(data) {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
@@ -37,12 +37,23 @@ export class UserskidsComponent implements OnInit {
   ngOnInit() {
     this.handleMostrar(); 
   }
+  delete(id){
+    this.Jarwis.deleteusers(id).subscribe(
+      data => this.handleMostrar(),
+      error => console.log(error)
+    );
+  }
   handleMostrar(){
     
-    this.mostrar = this.Jarwis.userskids().subscribe(
-      data => this.handleResponse(data),  
-      );
-   console.log(this.mostrar);
+    this.Jarwis.userskids().subscribe(
+      data => {
+
+         this.mostrar =  data;
+      
+         console.log(this.mostrar);
+        
+      });
+ 
   }
 
 }

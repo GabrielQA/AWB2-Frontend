@@ -5,6 +5,8 @@ import { CreateUsersComponent } from './components/create-users/create-users.com
 import { CreateVideosComponent } from './components/create-videos/create-videos.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { VideosComponent } from './components/videos/videos.component';
+import { ModusersComponent } from './components/modusers/modusers.component';
+import { ModvideosComponent } from './components/modvideos/modvideos.component';
 import { VerifyComponent } from './components/verify/verify.component';
 import { UserskidsComponent } from './components/userskids/userskids.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -83,6 +85,17 @@ const appRoutes: Routes = [
 {
   path: 'create-videos',
   component: CreateVideosComponent,
+  canActivate: [AfterLoginService]
+},
+
+{
+  path: 'modusers/:id',
+  component: ModusersComponent,
+  canActivate: [AfterLoginService]
+},
+{
+  path: 'modvideos/:id',
+  component: ModvideosComponent,
   canActivate: [AfterLoginService]
 },
 ];

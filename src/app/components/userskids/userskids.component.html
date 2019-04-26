@@ -42,22 +42,37 @@
                 </div>
                    <h2>Users Kids</h2>
                   <table>
-                    <tr>
-                      <th >Full name</th>
-                      <th >Username</th>
-                      <th >Birthdate</th>
-                        <th [(ngModel)]="form.id">Delete</th>
-                    </tr>
-                    <tr>
-                      <!--<div class="alert alert-success" [hidden]="!mostrar">
-                        {{mostrar}}
-                      </div>
-                      <td [(ngModel)]="form.name">FullNames</td>
-                      <td [(ngModel)]="form.username">UsersNames</td>
-                      <td [(ngModel)]="form.birthdate">Birthdate</td>
-                      <button [(ngModel)]="form.id" type="submit" class="btn btn-primary" [disabled]="!Delete.valid">Delete</button>  
--->
-                    </tr>
+                    <thead>
+                        <tr>
+                          <th >Full name</th>
+                          <th >Username</th>
+                          <th >Birthdate</th>
+                            <!-- <th [(ngModel)]="form.id">Delete</th>-->
+                        </tr>
+                    </thead>
+
+                    <tbody *ngFor="let item of mostrar; let i = index">
+                        <th >
+                          {{mostrar[i].name}}
+                        </th>
+                        <th >
+                          {{mostrar[i].username}}
+                        </th>
+                        <th >
+                          {{mostrar[i].birthdate}}
+                        </th>
+                        <th>
+                        <a routerLink="/modvideos/{{item.id}}" class="btn btn-primary">
+                        Modify</a>
+                        </th>
+
+                        <th>
+                        <a (click)="delete(item.id)" class="btn btn-primary">
+                          Delete</a>
+                        </th>
+                    </tbody>
+
+
                   </table>
                 <div class="form-group row">
                   <div style="display: flex; justify-content: flex-end;" class="col-sm-10 offset-2">

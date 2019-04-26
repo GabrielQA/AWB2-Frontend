@@ -1,3 +1,72 @@
-<p>
-  modusers works!
-</p>
+<div class="mt-4 col-8 offset-2">
+    <div class="card">
+      <div class="card-header">Modify Users Kids</div>
+      <div class="card-body">
+        <form #create_usersForm=ngForm (ngSubmit)="onSubmit()">
+          <!--Name-->
+          <div class="form-group row">
+            <label for="inputName3" class="col-sm-2 col-form-label">Full Name</label>
+            <div class="col-sm-10">
+             <input type="text" name="name" class="form-control" id="inputName3" placeholder="Name" [(ngModel)]="form.name" required>
+            </div>
+          </div>
+          <!--Username-->
+          <div class="form-group row">
+            <label for="inputlastname3" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+              <input type="text" name="lastname" class="form-control" id="inputlastname3" placeholder="Username" [(ngModel)]="form.username" required>
+            </div>
+          </div>
+          <!--birthdate-->
+          <div class="form-group row">
+            <label for="inputbirthdate3" class="col-sm-2 col-form-label">Birthdate</label>
+            <div class="col-sm-10">
+              <input type="number" name="birthdate" class="form-control" id="inputbirthdate3" placeholder="Birthdate" [(ngModel)]="form.birthdate" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10 offset-2">
+              <button type="submit" class="btn btn-primary" [disabled]="!create_usersForm.valid">Create</button>  
+            </div>
+          </div>
+          <a routerLink="/userskids" class="btn btn-success float-right">Go back</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
